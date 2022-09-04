@@ -13,7 +13,7 @@ while True:
     if username == "python" and password == "rules":
         print("Tervetuloa")
         break
-    elif username != "1" or password != "2":
+    elif username != "python" or password != "rules":
         print(f"Väärin {5 - count} yritystä jäljellä")
         count += 1
     if count == 6:
