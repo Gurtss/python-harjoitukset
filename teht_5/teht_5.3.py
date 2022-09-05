@@ -8,7 +8,7 @@ divide = 2
 
 while number > divide:
     if number % divide == 0:
-        print("Ei ole alkuluku")
+        print(f"{number} ei ole alkuluku")
         break
     divide += 1
 else:
