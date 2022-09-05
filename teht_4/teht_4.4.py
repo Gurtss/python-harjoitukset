@@ -4,9 +4,7 @@
 
 import random
 
-lowest = 1
-highest = 10
-random_number = random.randint(lowest, highest)
+random_number = random.randint(1, 10)
 
 while True:
     user_input = int(input("Arvaa numero 1 ja 10 väliltä: "))
