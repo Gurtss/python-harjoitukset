@@ -1,30 +1,28 @@
+import math
 
-def area(divider):
-    import math
-    a = math.pi * divider * divider
-    return a
-def unit_prize(area_a, prize):
-    cost = area_a / prize
-    return cost
+def pizzan_arvo(halkaisija, hinta):
+    sade = float(halkaisija / 2)
+    pinta_ala_m = (math.pi * sade * sade) / 10000
+    arvo = hinta / pinta_ala_m
+    return arvo
 
-prize_one = float(input("Anna pizzan 1 hinta: "))
+def read_pizza_values(pizza_id):
+    print(f"Anna {pizza_id+1}. pizzan tiedot")
+    hinta = float(input("Syötä pizzan hinta (€): "))
+    halkaisija = float(input("Syötä halkaisijan arvo (cm): "))
+    pizzat.append(pizzan_arvo(halkaisija, hinta))
 
-divider_2 = float(input("Anna pizzan 1 halkaisia: "))
 
-prize_two = float(input("Anna pizzan 2 hinta: "))
+pizzat = []
 
-divider_two = float(input("Anna pizzan 2 halkaisia: "))
 
-pizza_one_area = area(divider_2)
+lkm = int(input("Montako pizaa: "))
+for x in range(lkm):
+    read_pizza_values(x)
 
-pizza_two_area = area(divider_two)
+arvokkaimman_id = 0
+for x in range(len(pizzat)):
+    if pizzat[arvokkaimman_id] > pizzat[x]:
+        arvokkaimman_id = x
 
-prize_one_area = unit_prize(pizza_one_area, prize_one)
-
-prize_two_area = unit_prize(pizza_two_area, prize_two)
-
-if prize_one_area > prize_two_area:
-    print ("Pizza 1 on parempi vastine rahalle.")
-
-else:
-    print ("Pizza 2 on parempi vastine rahalle.")
+print(f"Arvokkain pizza on {arvokkaimman_id +1}")
